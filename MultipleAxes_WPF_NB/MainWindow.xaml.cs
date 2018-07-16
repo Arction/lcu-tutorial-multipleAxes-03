@@ -28,7 +28,7 @@ namespace MultipleAxes_WPF_NB
             InitializeComponent();
 
             // Create chart instance and store it member variable.
-            var chart = new LightningChartUltimate(/*Type your License key here...*/);
+            var chart = new LightningChartUltimate();
 
             // Set chart control into the parent container.
             (Content as Grid).Children.Add(chart);

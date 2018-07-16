@@ -27,7 +27,7 @@ namespace MultipleAxes_WF
             InitializeComponent();
 
             // Create chart instance and store it member variable.
-            var chart = new LightningChartUltimate(/*Type your License key here...*/);
+            var chart = new LightningChartUltimate();
 
             // Set chart control into the parent container.
             chart.Parent = this;         //Set form as parent 
