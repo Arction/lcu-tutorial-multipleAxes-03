@@ -6,20 +6,20 @@ The previous explained about best practices of data visualization in terms of Da
 
 This tutorial will show how to create additional Y-axes and assign line series to different axes. Modify the code from the previous article. Add a new Y-axis before a block with line series initialization ***series2*** according to the following steps below.
 
-1. Create new axis with information about 2D View.
+##### 1. Create new axis with information about 2D View.
 
    ```csharp
    // New y-axis instance assigned to XY layout.
    var axisY = new AxisY(chart.ViewXY);
    ```
-2. Configure and set options.
+##### 2. Configure and set options.
 
    ```csharp
    // Configure (e.g. Color). 
    axisY.AxisColor = Color.FromArgb(255, 255, 255, 0);
    ```
 
-3. Make created axis a part of a chart.
+##### 3. Make created axis a part of a chart.
 
    ```csharp
    // Add the y-axis into list of YAxes.
