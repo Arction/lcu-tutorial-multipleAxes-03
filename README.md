@@ -8,23 +8,23 @@ This tutorial will show how to create additional Y-axes and assign line series t
 
 ##### 1. Create new axis with information about 2D View.
 
-   ```csharp
-   // New y-axis instance assigned to XY layout.
-   var axisY = new AxisY(chart.ViewXY);
-   ```
+```csharp
+// New y-axis instance assigned to XY layout.
+var axisY = new AxisY(chart.ViewXY);
+```
 ##### 2. Configure and set options.
 
-   ```csharp
-   // Configure (e.g. Color). 
-   axisY.AxisColor = Color.FromArgb(255, 255, 255, 0);
-   ```
+```csharp
+// Configure (e.g. Color). 
+axisY.AxisColor = Color.FromArgb(255, 255, 255, 0);
+```
 
 ##### 3. Make created axis a part of a chart.
 
-   ```csharp
-   // Add the y-axis into list of YAxes.
-   chart.ViewXY.YAxes.Add(axisY);
-   ```
+```csharp
+// Add the y-axis into list of YAxes.
+chart.ViewXY.YAxes.Add(axisY);
+```
 
 Having multiple X or Y axes, a user can assign each data series to an individual axis during either series instance declaration or after that by changing special properties.
 
