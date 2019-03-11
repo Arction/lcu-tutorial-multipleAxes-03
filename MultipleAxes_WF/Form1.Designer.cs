@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 311);
             this.Name = "Form1";
-            this.Text = "LightningChart tutorial 03 - Multiple Axes Chart";
+            this.Text = "LightningChart Tutorial - Multiple Axes";
             this.ResumeLayout(false);
 
         }

@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------------------------------------------
-// LightningChart® example code: Chart with Multiple Axes.
+// LightningChart® example code: Chart with Multiple Axes Demo.
 //
 // If you need any assistance, or notice error in this example code, please contact support@arction.com. 
 //
@@ -7,14 +7,14 @@
 //
 // http://arction.com/ | support@arction.com | sales@arction.com
 //
-// © Arction Ltd 2009-2017. All rights reserved.  
+// © Arction Ltd 2009-2019. All rights reserved.  
 // ------------------------------------------------------------------------------------------------------
 using System;
 using System.Windows;
 using System.Windows.Media;
 
-// Arction namespaces
-using Arction.Wpf.SemibindableCharting;
+// Arction namespaces.
+using Arction.Wpf.SemibindableCharting;     // LightningChartUltimate and general types.
 
 namespace MultipleAxes_WPF_SB
 {
@@ -24,40 +24,71 @@ namespace MultipleAxes_WPF_SB
         {
             InitializeComponent();
 
-            // Prepared data for first created line-series.
+            // Create chart.
+            // This is done using XAML.
+
+            // Disable rendering before updating chart properties to improve performance
+            // and to prevent unnecessary chart redrawing while changing multiple properties.
+            chart.BeginUpdate();
+
+            // Generate data for first series.
             var rand = new Random();
             int pointCounter = 70;
 
             var data = new SeriesPoint[pointCounter];
-            for (int i = 0; i < pointCounter; i++) {
+            for (int i = 0; i < pointCounter; i++)
+            {
                 data[i].X = (double)i;
                 data[i].Y = rand.Next(0, 100);
             }
 
+            // Create a new PointLineSeries.
+            // This is done using XAML.
+
             // Set data-points into series.
             series.Points = data;
 
-            // Prepare new data for new line-series with sinusoidal algorithm.
+            // Generate new data for second series.
             data = new SeriesPoint[pointCounter];
-            for (int i = 0; i < pointCounter; i++) {
+            for (int i = 0; i < pointCounter; i++)
+            {
                 data[i].X = (double)i;
                 data[i].Y = Math.Sin(i * 0.2) * 50 + 50;
             }
 
+            // Define color which will be used for new Y-axis and series coloring.
+            // This is done using XAML.
+
+            // 1. Create a new Y-axis.
+            // This is done using XAML.
+
+            // 2. Add the new Y-axis into list of Y-axes.
+            // This is done using XAML.
+
+            // 3. Create another PointLineSeries and set new color and line-pattern for it.
+            // This is done using XAML.
+
             // Set data-points into series.
             series2.Points = data;
-            
-            // Auto-scale X and Y axes.
+
+            // If PointLineSeries' constructor is empty or has wrong axes instances,
+            // assign axis index to apply current series to specific axes.
+            series2.AssignXAxisIndex = 0;
+            series2.AssignYAxisIndex = 1;
+
+            // Auto-scale X- and Y-axes.
             chart.ViewXY.ZoomToFit();
 
-            #region Hiden polishing
-
-            CusomizeChart(chart);
-
+            #region Hidden polishing
+            CustomizeChart(chart);
             #endregion
+
+            // Call EndUpdate to enable rendering again.
+            chart.EndUpdate();
         }
 
-        private void CusomizeChart(LightningChartUltimate chart)
+        #region Hidden polishing
+        private void CustomizeChart(LightningChartUltimate chart)
         {
             chart.ChartBackground.Color = System.Windows.Media.Color.FromArgb(255, 30, 30, 30);
             chart.ChartBackground.GradientFill = GradientFill.Solid;
@@ -83,5 +114,6 @@ namespace MultipleAxes_WPF_SB
                 xAxis.ValueType = AxisValueType.Number;
             }
         }
+        #endregion
     }
 }
