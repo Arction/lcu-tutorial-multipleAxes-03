@@ -2,7 +2,7 @@
 
 The previous explained about best practices of data visualization in terms of Data Analysis. Another way to show a variety of series in one chart without overlaps and mess is combining multiple axes in Layered / Stacked / Segmented layout for better view organization.
 
-![chart with multiple axes 2d winforms wpf](./assets/chart-multiple-axes-2d-winforms-wpf.png)
+![chart with multiple axes 2d winforms wpf](./assets/chart-xy-multiple-axes-2d-winforms-wpf.png)
 
 This tutorial will show how to create additional Y-axes and assign line series to different axes. Modify the code from the previous tutorial [Multiple Series](https://www.arction.com/tutorials/#/lcu_tutorial_multipleSeries_02). Add a new Y-axis before a block with line series initialization ***series2*** according to the following steps below.
 
