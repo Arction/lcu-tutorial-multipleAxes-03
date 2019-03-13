@@ -1,4 +1,4 @@
-# Multiple Axes
+# 2D Chart with Multiple Axes
 
 The previous explained about best practices of data visualization in terms of Data Analysis. Another way to show a variety of series in one chart without overlaps and mess is combining multiple axes in Layered / Stacked / Segmented layout for better view organization.
 
